@@ -32,6 +32,25 @@ function demo_menu() {
     'access arguments' => array('access content'),
   );
 
+  $items['demo/%'] = array(
+    'title' => 'Drupal 7 custom module demo wildcard callback',
+    'page callback' => 'demo_basic_extra',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+    'file' => 'demo_basic.extra.inc',
+  );
+
+  $items['user/%/demo'] = array(
+    'title' => 'Demo',
+    'description' => 'Demo of menu tab',
+    'page callback' => 'demo_user_tab',
+    'page arguments' => array(1),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer users'),
+    'file' => 'demo.user.inc',
+    'type' => MENU_LOCAL_TASK,
+   );
+
   return $items;
 }
 

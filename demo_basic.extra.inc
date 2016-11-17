@@ -1,4 +1,4 @@
-<<?php
+<?php
 
 function demo_basic_extra($wildcard) {
   $content = array(
